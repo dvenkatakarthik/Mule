@@ -1,0 +1,50 @@
+#%RAML 1.0
+title: Instagram
+version: 1.0
+
+/photos:
+  get:
+    responses: 
+     200:
+       body:
+         application/xml:
+           example: {
+           Photos
+           }
+  post:
+  /{id}:
+    get:
+      responses: 
+        200:
+          body:
+            application/json:
+              example: {
+                "uri": "example"
+              }
+/photo:
+  get:
+    description: Get a Photo
+    queryParameters: 
+      id:
+        type: number
+        example: 5
+        description: Unique id for photo
+        displayName: Enter id
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: {
+            "photos": "photo"
+            }
+      400:
+        body:
+          application/json:
+            example: { "Error": "No photo fetched"}
+        
+  put:
+/video:
+  get:
+/videos:
+  post:
+
